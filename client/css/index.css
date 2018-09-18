@@ -1,0 +1,137 @@
+body {
+  font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue',
+    Helvetica, Arial, 'Lucida Grande', sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  color: #0c120c;
+  background-color: #f7f7ff;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+#conversations {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 300px auto;
+  grid-template-rows: 100%;
+}
+
+#numbers {
+  grid-column: 1 / 2;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+}
+
+#numbers #numbersTitle {
+  margin: 0;
+  padding: 26px 16px 16px 16px;
+  color: #d90368;
+}
+
+.number {
+  display: grid;
+  grid-template-columns: auto 60px 16px;
+  /* min-height: 1em; */
+  padding: 0 10px 0 10px;
+  transition: all 0.25s;
+}
+
+.number h3 {
+  cursor: pointer;
+  margin: 0;
+  padding: 22px 0;
+  position: relative;
+}
+
+.number > * {
+  align-self: center;
+}
+
+.number-active {
+  background-color: #16bac5;
+}
+
+#conversation {
+  grid-column: 2 / 3;
+  padding: 20px;
+  background-color: #ffffff;
+}
+
+#conversation #chat {
+  display: grid;
+  grid-template-rows: auto 28px;
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  border: 3px solid #0c120c;
+  border-radius: 16px;
+  padding: 16px;
+  background-color: #f7f7ff;
+}
+
+#conversation #chat #messages {
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+}
+
+#conversation #chat #messages div {
+  box-sizing: border-box;
+  padding-bottom: 10px;
+}
+
+#conversation #chat #messages .received {
+  color: #d90368;
+  padding-right: 40%;
+}
+
+#conversation #chat #messages .sent {
+  text-align: right;
+  padding-left: 40%;
+  padding-right: 20px;
+  color: #fb8b24;
+}
+
+#conversation #chat #chatInput {
+  grid-row: 2 / 3;
+  display: grid;
+  grid-template-columns: auto 80px;
+}
+
+#conversation #chat #chatInput input {
+  padding-left: 6px;
+  box-sizing: border-box;
+  min-height: 30px;
+  font-size: 16px;
+}
+
+#conversation #chat #chatInput button {
+  background-color: #d90368;
+  color: #ffffff;
+  min-height: 30px;
+  font-size: 16px;
+  transition: all 0.1s;
+  border: none;
+}
+
+#conversation #chat #chatInput button:hover {
+  background-color: #ff0368;
+  color: #0c120c;
+  cursor: pointer;
+}
+
+#conversation #chat #chatInput button:disabled {
+  background-color: #cccccc;
+  color: #666666;
+  cursor: default;
+}
