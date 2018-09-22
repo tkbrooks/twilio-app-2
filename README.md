@@ -1,6 +1,6 @@
 # Twilio App v0.0.1 #
 
-The idea behind this app was to create a disposable phone number from ads that I post on Craigslist, and provide an easy way to respond to incoming messages to that number.  Unsurprisingly, I've noticed that the more my number ends up online, the more spam calls and texts I get.
+The idea behind this app was to create a disposable phone number for ads that I post on Craigslist, and provide an easy way to respond to incoming messages to that number.  Unsurprisingly, I've noticed that the more my number ends up online, the more spam calls and texts I get.
 
 I used Twilio to create a disposable phone number and added funds to my account to cover sent / received texts.
 
