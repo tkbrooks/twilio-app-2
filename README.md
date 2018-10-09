@@ -1,8 +1,8 @@
 # Twilio App v0.0.1
 
-The idea behind this app was to use a disposable phone number for ads that are posted online (e.g. Craigslist), and provide an easy way to respond to incoming messages to that disposable number. Unsurprisingly, I've noticed that the more my real phone number ends up online, the more spam calls and texts I get.
+Unsurprisingly, I've noticed that the more my real phone number ends up online, the more spam calls and texts I get. The idea behind this app was to use a disposable phone number for ads that are posted online (e.g. Craigslist), and provide an easy way to respond to incoming messages to that disposable number.
 
-I used Twilio to create the disposable phone number and added funds to my account to cover sent / received texts.
+I use Twilio to create the disposable phone number and added funds to my account to cover sent / received texts.
 
 This application must be run on a server when incoming texts to your Twilio number are expected. The application requires PostgreSQL to store conversations and messages and uses the 'twilio-app' database. The application also currently pulls information like your Twilio accountSid and authToken from a secrets.js file which must be created inside the server folder. Alternatively, you can use Node process.env environment variables to store this information. The structure of the secrets.js file is as follows:
 
