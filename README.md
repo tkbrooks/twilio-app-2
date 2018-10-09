@@ -1,21 +1,21 @@
-# Twilio App v0.0.1 #
+# Twilio App v0.0.1
 
-The idea behind this app was to create a disposable phone number from ads that I post on Craigslist, and provide an easy way to respond to incoming messages to that number.  Unsurprisingly, I've noticed that the more my number ends up online, the more spam calls and texts I get.
+The idea behind this app was to use a disposable phone number for ads that are posted online (e.g. Craigslist), and provide an easy way to respond to incoming messages to that disposable number. Unsurprisingly, I've noticed that the more my real phone number ends up online, the more spam calls and texts I get.
 
-I used Twilio to create a disposable phone number and added funds to my account to cover sent / received texts.
+I used Twilio to create the disposable phone number and added funds to my account to cover sent / received texts.
 
-You must run this on a server when you are expecting incoming texts to your Twilio number.  The application requires PostgreSQL to store conversations and messages and uses the 'twilio-app' database.  The application also currently pulls information like your Twilio accountSid and authToken from a secrets.js file which you must create inside the server folder.  The structure of secrets.js is as follows:
+This application must be run on a server when incoming texts to your Twilio number are expected. The application requires PostgreSQL to store conversations and messages and uses the 'twilio-app' database. The application also currently pulls information like your Twilio accountSid and authToken from a secrets.js file which must be created inside the server folder. Alternatively, you can use Node process.env environment variables to store this information. The structure of the secrets.js file is as follows:
 
 module.exports = {
-  accountSid: 'XXXXXXXXXXXXXXX',
-  authToken: 'XXXXXXXXXXXXXX',
-  myNumber: '+1XXXXXXXXXX',
-  twilioNumber: '+1XXXXXXXXXX'
+accountSid: 'XXXXXXXXXXXXXXX',
+authToken: 'XXXXXXXXXXXXXX',
+myNumber: '+1XXXXXXXXXX',
+twilioNumber: '+1XXXXXXXXXX'
 };
 
-## How it works: ##
-I provide Craigslist with a disposable phone number created by Twilio.  Any texts sent to that number are then posted to /api/messages/twilio (this must be configured on Twilio).  Since I typically  run the server in the background on my desktop, I use ngrok to tunnel to localhost and provide the ngrok server address to Twilio.
-Opening the browser to the localhost address will show incoming messages in real time and provide a chat interface to respond to those messages through the disposable Twilio number.
-The first message from a new number is always forwarded to your personal number.  Any subsequent forwarding can be enabled or disabled via the interface.
+## Typical use scenario:
 
-The application is currently not very customizable, but future improvements are planned.
+I post a new ad on Craigslist and use my disposable Twilio phone number for contact purposes. Any texts sent to that number are then posted to my application by Twilio (this process must be configured through Twilio). Since I typically run the server in the background on my desktop, I use ngrok to tunnel to localhost and provide the ngrok server address to Twilio.
+Opening the browser to the localhost address will show incoming messages in real time and provide a chat interface to respond to those messages through the disposable Twilio number. As it is currently setup, the first message from a new number is always forwarded to your real number so you don't need to be watching for incoming messages. Any subsequent forwarding can be enabled or disabled via the chat interface.
+
+The application is currently in a bare-bones functional state, but new features are planned.
