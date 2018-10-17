@@ -17,3 +17,5 @@ I post a new ad on Craigslist and use my disposable Twilio phone number for cont
 Opening the browser to the localhost address will show incoming messages in real time and provide a chat interface to respond to those messages through the disposable Twilio number. As it is currently setup, the first message from a new number is always forwarded to your real number so you don't need to be watching for incoming messages. Any subsequent forwarding can be enabled or disabled via the chat interface.
 
 The application is currently in a bare-bones but functional state.  I'll probably add new features the more I use it.
+
+You can see an example of the chat interface here:  https://github.com/tkbrooks/twilio-app-2/blob/master/example.jpg
